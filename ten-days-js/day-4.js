@@ -31,5 +31,33 @@ playRectangle.area;
 
 //day 4 - part 2
 let dayFourPart2 = document.querySelector('.day-4-part-2');
+//iterating over objects
+//one parameter a (objects), object
+//each object in the array has two integer properties: x and y
+//->function has to return a count of objects (o) in the array (a)
+//->where o.x == o.y
+
+function getCount(objects) {
+  let count = 0;
+  for(let i = 0; i < objects.length; i++){
+    if(objects[i].x == objects[i].y){
+      count++;
+    }
+  }
+
+  return count;
+}
+
+//another way of looping through the array with objectss
+let count = 0;
+let playObject = [{x: 1, y: 2}, {x: 3, y: 3}];
+for(let play in playObject){
+  //console.log(playObject[play]);
+  if(playObject[play].x == playObject[play].y){
+    count++;
+  }
+}
+console.log(count);
+//console.log(playObject);
 
 dayFourPart2.innerHTML = '';
