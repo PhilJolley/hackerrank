@@ -61,3 +61,29 @@ console.log(count);
 //console.log(playObject);
 
 dayFourPart2.innerHTML = '';
+
+//day 4 - part 3
+let dayFourPart3 = document.querySelector('.day-4-part-3');
+//we will create a Polygon Class
+//we will use a constructor that takes an array of integer values
+//->describing the lengths of the polygons sides
+//perimeter (perimeter()) method that returns the polygon's perimeter
+//
+class Polygon {
+  constructor(arr){
+    this.arr = arr;
+  }
+  perimeter() {
+    let total = 0;
+    for(let i = 0; i < this.arr.length; i++){
+      total += this.arr[i];
+    }
+    return total;
+  }
+}
+// Create a polygon with side lengths 3, 4, and 5
+let triangle = new Polygon([3, 4, 5]);
+
+// Print the perimeter
+console.log(triangle.perimeter());
+dayFourPart3.innerHTML = '';
