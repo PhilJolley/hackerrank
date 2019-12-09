@@ -30,3 +30,40 @@ class Square extends Rectangle {
 let newSq = new Square(3);
 console.log(newSq.area());
 dayFive.innerHTML = '';
+
+//day 5 part 2
+let dayFivePart2 = document.querySelector('.day-5-part-2');
+//has a tagged template literal that passes the area and perimeter
+//->to a tag function named sides
+//Recall that the first argument of a tag function is an array of string
+//->literals from the template, and the subsequent values are the template's respective expression values.
+//s1 and s2 are integers
+//Step 1: finds s1 and s2 by plugging the area and perimeter values into the formula
+//Step 2: Creates an array consisting of s1 and s2 and sorts it in ascending order
+//step 3: Returns the sorted array
+function sides(literals, ...expressions) {
+    //console.log(expressions);
+    //console.log(literals);
+    let val1 = expressions[0];
+    let val2 = expressions[1];
+
+    //new arr
+    let sortArr = Array();
+
+    let areaCalc = val2 + Math.sqrt((val2**2) - (16 * val1) );
+    let periCalc = val2 - Math.sqrt((val2**2) - (16 * val1) );
+
+    //push to the new array
+    sortArr.push(areaCalc / 4);
+    sortArr.push(periCalc / 4);
+    //sort the array
+    sortArr.sort(function(a, b){return a-b});
+
+    return sortArr;
+
+}
+let s1 = [140, 48];
+
+dayFivePart2.innerHTML = '' + sides`The area is: ${s1[0]}
+The perimeter is: ${s1[1]}
+` + '';
