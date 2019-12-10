@@ -67,3 +67,22 @@ let s1 = [140, 48];
 dayFivePart2.innerHTML = '' + sides`The area is: ${s1[0]}
 The perimeter is: ${s1[1]}
 ` + '';
+
+//day 5 part 2
+let dayFivePart3 = document.querySelector('.day-5-part-3');
+//code block
+//one parameter: an array (nums).
+//-> loop through the array performing one of the following actions on each element.
+//-> 1. if the element is even, multply the element by 2
+//-> 2. if the element is odd, multply the element by 3
+//function must return the modified array
+//test array
+//const array1 = [1, 4, 9, 16];
+
+// pass a function to map
+function modifyArray(nums) {
+    const map1 = nums.map(x => x % 2 === 0 ? x * 2 : x * 3);
+    //console.log(map1);
+    return map1;
+}
+dayFivePart3.innerHTML = '';
